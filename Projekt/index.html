@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+
+    <main>
+        <header class="header">
+            <div class="weekControls">
+                <i id="prevWeekBtn" class="fas fa-angle-double-left"></i>
+                <span id="weekDisplay">
+                    <span id="weekStartDisplay"></span>
+                    ‒ 
+                     <span id="weekEndDisplay"></span>
+                </span>            
+                <i id="nextWeekBtn" class="fas fa-angle-double-right"></i>
+    
+            </div>
+            <h1>Calendar</h1>
+            <div class="generalControls">
+                <i id="addButton" class="fas fa-plus"></i>
+                <i id="trashButton" class="fas fa-trash-alt"></i>
+                <i id="loginButton" class="fa fa-sign-in"></i>
+            </div>
+        </header>
+    
+        <section id="calendar">
+            <div class="dayTime">            
+            </div>
+            <div data-name="Monday" data-dayIndex = "0" class="day">           
+            </div>
+            <div data-name="Tuesday" data-dayIndex = "1" class="day">           
+            </div>
+            <div data-name="Wednesday" data-dayIndex = "2" class="day">           
+            </div>
+            <div data-name="Thursday" data-dayIndex = "3" class="day">            
+            </div>
+            <div data-name="Friday" data-dayIndex = "4" class="day">           
+            </div>
+            <div data-name="Saturday" data-dayIndex = "5" class="day">            
+            </div>
+            <div data-name="Sunday" data-dayIndex = "6" class="day">           
+            </div>
+        </section>
+
+
+
+
+    <form id="eventModal">
+    <h2 id="modalTitle">Mach Was</h2>
+        <label for="title" class="descriptor">Title</label>
+        <div>
+            <input type="text" required id="eventTitle" name="title" class="shortInput">
+        </div>
+        <label for="date" class="descriptor">Date</label>
+        <div>
+            <input type="date" required id="eventDate" name="date" class="shortInput">
+        </div>
+        <label for="time" class="descriptor">Time</label>
+        <div>
+            <input type="time" required id="eventStart" name="time" class="shortInput">
+            -
+            <input type="time" required id="eventEnd" name="time" class="shortInput">
+        </div>
+
+        <label for="Organizer" class="descriptor">Organizer</label>
+        <div>
+        <input type="email" required id="eventOrganizer" name="Organizer" class="shortInput" value=""> 
+    </div>
+    </br>
+
+    <label for="Status" class="descriptor">Status</label>
+        <select required id="eventStatus" name="Status">
+          <option value="Busy">Busy</option>
+          <option value="Available">Available</option>
+        </select>
+
+    <label for="Allday" class="descriptor">Allday?</label>
+    <input type="checkbox" required id="eventAllday" name="allday" class="shortInput" value=""> 
+    </br>
+
+    <label for="Webpage" class="descriptor">Webpage</label>
+    <div>
+    <input type="url" required id="eventWebpage" name="Web" class="shortInput" value=""> 
+    </div>
+    </br>
+
+        <label for="description" class="descriptor" >Description</label>
+            <div>
+                <textarea name="description" id="eventDescription"></textarea>
+            </div>
+            <label for="colors" class="descriptor" >Color</label>
+            <div id="colors">
+                <input type="button" name="color" class="color color-red" data-color="red">
+                <input type="button" name="color" class="color color-blue" data-color="blue">
+                <input type="button" name="color" class="color color-green" data-color="green">
+                <input type="button" name="color" class="color color-orange" data-color="orange">
+            </div>
+            <div id="eventControls">
+                <input type="submit" id="submitButton" value="Submit" class="button">
+                <input type="button" id="cancelButton" value="Cancel" class="button">
+                <input type="button" id="copyButton" value="Copy" class="button">
+                <input type="button" id="deleteButton" value="Delete" class="button">
+            </div>
+            <div id="errors"></div>      
+         </form>
+
+    </main>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" type="module"></script>
+    
+</body>
+</html>
